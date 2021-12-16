@@ -28,7 +28,7 @@ export default function TxTable ({displayData}) {
 				</thead>
 				<tbody className="text-gray-900">
                     {displayData.map((tx, index) => (
-                        <tr className="bg-zinc-200">
+                        <tr className="bg-zinc-200" key={index}>
                             <td className="p-3">
                                 <div className="flex align-items-center">
                                     <div className="ml-3">
