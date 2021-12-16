@@ -1,0 +1,27 @@
+{
+  "name": "watch-wallet-address",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@walletconnect/web3-provider": "^1.7.0",
+    "moralis": "^0.0.163",
+    "next": "12.0.7",
+    "next-pwa": "^5.4.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-moralis": "^0.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.4.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "8.4.1",
+    "eslint-config-next": "12.0.7",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.2"
+  }
+}
