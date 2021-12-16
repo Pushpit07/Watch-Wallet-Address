@@ -1,6 +1,8 @@
-import Moralis from "moralis";
+import { useMoralis } from "react-moralis";
 
 export default function TxTable ({displayData}) {
+    const { Moralis } = useMoralis();
+
     function getTimestamp (blockTimestamp) {
         const pad = (n, s=2) => (`${new Array(s).fill(0)}${n}`).slice(-s);
         const d = new Date(blockTimestamp);
@@ -27,7 +29,7 @@ export default function TxTable ({displayData}) {
 					</tr>
 				</thead>
 				<tbody className="text-gray-900">
-                    {displayData.map((tx, index) => (
+                    {displayData ? displayData.map((tx, index) => (
                         <tr className="bg-zinc-200" key={index}>
                             <td className="p-3">
                                 <div className="flex align-items-center">
@@ -46,10 +48,10 @@ export default function TxTable ({displayData}) {
                                 <span data-address={tx.to_address}>{tx.to_address}</span> <i className="far fa-copy ml-1 cursor-pointer" onClick={copy}></i>
                             </td>
                             <td className="p-3">
-                                {Moralis.Units.FromWei(tx.value)}
+                                {Moralis.Units.FromWei(tx.value).toString().slice(0,5)}
                             </td>	
                         </tr>
-                    ))}
+                    )) : null}
 				</tbody>
 			</table>
 	

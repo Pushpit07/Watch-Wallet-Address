@@ -1,14 +1,11 @@
 import "../styles/globals.css";
 import { MoralisProvider } from "react-moralis";
-import Moralis from "moralis";
 import Script from 'next/script'
 
 const MORALIS_APP_ID = "3Fg7xGs8RJcm6hqploLq21zyTJuivkud3yHrYqmZ";
 const MORALIS_SERVER_URL = "https://vc8ylcqwpen1.usemoralis.com:2053/server";
 
 function MyApp({ Component, pageProps }) {
-	Moralis.start({ serverUrl: MORALIS_SERVER_URL, appId: MORALIS_APP_ID });
-
 	return (
 		<>
 			<Script src="https://kit.fontawesome.com/0366dd7992.js" crossorigin="anonymous"></Script>
