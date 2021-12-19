@@ -5,7 +5,15 @@ module.exports = {
     ],
     darkMode: "class",
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                primary: {
+                    100: "#fa6e48",
+                    200: "#f56842",
+                    300: "#d9603f",
+                },
+            },
+        },
     },
     plugins: [require("@tailwindcss/forms")],
 };

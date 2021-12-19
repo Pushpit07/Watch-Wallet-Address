@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { useMoralis, useMoralisWeb3Api } from "react-moralis";
+import { useMoralisWeb3Api } from "react-moralis";
 import InputForm from "../pageComponents/InputForm";
 import TxTable from "../pageComponents/TxTable";
+import Signup from "../pageComponents/Signup";
 
 export default function Home() {
-    // const { authenticate, isAuthenticated, logout, user } = useMoralis();
     const [displayData, setDisplayData] = useState([]);
     const [account, setAccount] = useState(
         "0x48b7cedF1D50cE6595a027c9234D5e5Bef54E09C"
@@ -29,6 +29,8 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+
+            {/* <Signup /> */}
 
             <main className={styles.main}>
                 <h1 className={styles.title}>Watch Wallet Address</h1>
