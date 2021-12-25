@@ -9,10 +9,12 @@ const Navbar = () => {
     return (
         <nav className="bg-white border-gray-200 px-2 sm:px-4 py-3 dark:bg-gray-800">
             <div className="container flex flex-wrap justify-between items-center mx-auto">
-                <a href="." className="flex">
-                    <img src="/icon-512x512.png" alt="logo" className="h-10 mr-2" />
-                    <span className="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Watch Wallet Address</span>
-                </a>
+                <Link href="/">
+                    <a href="#" className="flex">
+                        <img src="/icon-512x512.png" alt="logo" className="h-10 mr-2" />
+                        <span className="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Watch Wallet Address</span>
+                    </a>
+                </Link>
 
                 <div className="flex md:order-2 ml-auto">
                     {isAuthenticated && user ? (
