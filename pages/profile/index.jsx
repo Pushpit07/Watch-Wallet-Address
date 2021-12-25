@@ -14,7 +14,7 @@ const Profile = () => {
             setUsername(user.attributes.username);
             setEmail(user.attributes.email);
         }
-    }, [user]);
+    }, [isAuthenticated, user]);
 
     const handleSave = () => {
         setUserData({
@@ -33,7 +33,7 @@ const Profile = () => {
             </Head>
             <div className="flex flex-wrap justify-center content-center items-center pt-24">
                 <div className="w-1/2 px-3">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="username">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="username">
                         Username
                     </label>
                     <input
@@ -47,7 +47,7 @@ const Profile = () => {
             </div>
             <div className="flex flex-wrap justify-center content-center items-center">
                 <div className="w-1/2 px-3">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="email">
                         Email
                     </label>
                     <input
@@ -61,7 +61,7 @@ const Profile = () => {
             </div>
             <div className="flex flex-wrap justify-center content-center items-center">
                 <div className="w-1/2 px-3">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="password">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="password">
                         Password
                     </label>
                     <input
