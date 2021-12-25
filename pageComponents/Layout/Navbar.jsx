@@ -4,7 +4,7 @@ import ErrorBox from "./ErrorBox";
 
 const Navbar = () => {
     const { authenticate, isAuthenticated, authError, logout, user } = useMoralis();
-    if (user) console.log(user.attributes.username);
+    // if (user) console.log(user.attributes.username);
 
     return (
         <nav className="bg-white border-gray-200 px-2 sm:px-4 py-3 dark:bg-gray-800">

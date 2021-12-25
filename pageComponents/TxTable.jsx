@@ -2,6 +2,7 @@ import { useMoralis } from "react-moralis";
 
 export default function TxTable({ displayData }) {
     const { Moralis } = useMoralis();
+    Moralis.initialize("3Fg7xGs8RJcm6hqploLq21zyTJuivkud3yHrYqmZ");
 
     function getTimestamp(blockTimestamp) {
         const pad = (n, s = 2) => `${new Array(s).fill(0)}${n}`.slice(-s);
@@ -22,7 +23,7 @@ export default function TxTable({ displayData }) {
 
     return (
         <>
-            <table className="table table-auto text-gray-400 border-separate space-y-6 text-sm mt-16">
+            <table className="w-5/6 table table-auto text-gray-400 border-separate space-y-6 text-sm mt-16">
                 <thead className="bg-zinc-900 text-zinc-50">
                     <tr>
                         <th className="p-3">block_timestamp</th>

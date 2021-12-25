@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Head from "next/head";
 import { useMoralis } from "react-moralis";
 import ErrorBox from "../../pageComponents/Layout/ErrorBox";
 
@@ -25,12 +26,14 @@ const Profile = () => {
 
     return (
         <>
+            <Head>
+                <title>Watch Wallet Address | Profile</title>
+                <meta name="description" content="Watch Wallet Address" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <div class="flex flex-wrap justify-center content-center items-center pt-24">
                 <div class="w-1/2 px-3">
-                    <label
-                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="username"
-                    >
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="username">
                         Username
                     </label>
                     <input
@@ -44,10 +47,7 @@ const Profile = () => {
             </div>
             <div class="flex flex-wrap justify-center content-center items-center">
                 <div class="w-1/2 px-3">
-                    <label
-                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="email"
-                    >
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
                         Email
                     </label>
                     <input
@@ -61,10 +61,7 @@ const Profile = () => {
             </div>
             <div class="flex flex-wrap justify-center content-center items-center">
                 <div class="w-1/2 px-3">
-                    <label
-                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="password"
-                    >
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="password">
                         Password
                     </label>
                     <input
@@ -79,10 +76,7 @@ const Profile = () => {
 
             {userError && (
                 <div class="flex flex-wrap justify-center content-center items-center">
-                    <ErrorBox
-                        title="User change failed!"
-                        message={userError.message}
-                    />
+                    <ErrorBox title="User change failed!" message={userError.message} />
                 </div>
             )}
 
