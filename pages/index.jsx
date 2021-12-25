@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
@@ -33,10 +33,6 @@ export default function Home() {
         }
         subscribeTransactions();
     }
-
-    useEffect(() => {
-        console.log("index-", account);
-    }, [account]);
 
     return (
         <div className={styles.container}>
