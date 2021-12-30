@@ -6,10 +6,8 @@ import InputForm from "../pageComponents/InputForm";
 import TxTable from "../pageComponents/TxTable";
 import Signup from "../pageComponents/Signup";
 
-export default function Home() {
+export default function Home({ account, setAccount }) {
     const [displayData, setDisplayData] = useState([]);
-    // const [account, setAccount] = useState("0x48b7cedf1d50ce6595a027c9234d5e5bef54e09c");
-    const [account, setAccount] = useState("0x54e006260e0ba68178c4280bff08e9ec3e81f5a7");
     const Web3Api = useMoralisWeb3Api();
     const { Moralis } = useMoralis();
 

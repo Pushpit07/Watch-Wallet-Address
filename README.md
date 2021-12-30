@@ -1,36 +1,85 @@
 # Watch-Wallet-Address
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+TODO
 
-## Getting Started
+# Whale Watcher 🐋
 
-First, run the development server:
+### About
 
-```bash
-npm run dev
-# or
-yarn dev
+Aim: Allow user to track wallet addresses, cross-chain (ETH/BSC/MATIC/…) and recieve alerts when specific transaction conditions are met.
+
+### Quick Launch 🚀
+
+Via terminal, navigate to root directory:
+
+```sh
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to [Moralis.io](https://moralis.io/) to create your server instance.
+In the root directory of your code base create a `.env` file containing the moralis servers' enviroment variables:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```sh
+REACT_APP_MORALIS_APPLICATION_ID=xxx
+REACT_APP_MORALIS_SERVER_URL=https://xxx.bigmoralis.com:2053/server
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Install Moralis admin client:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+npm install -g moralis-admin-cli
+```
 
-## Learn More
+This will allow you to sync Moralis Cloud Functions in the [CloudFile](Cloud/cloudFunctions.js):
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+moralis-admin-cli watch-cloud-file --moralisApiKey xxx --moralisApiSecret xxx --moralisSubdomain xxx.moralisweb3.com --autoSave 1 --moralisCloudfolder /xxx/watch-wallet-address/Cloud
+```
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Finally provide your path to the [CloudFile](Cloud/cloudFunctions.js) and sync with Moralis server instance:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```sh
+/xxx/watch-wallet-address/Cloud/cloudFunctions.js
+```
 
-## Deploy on Vercel
+Once installed and synced with your Moralis server instance, in the project directory run:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```sh
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Dependencies 🏗
+
+`Moralis`: [Docs](https://docs.moralis.io/)
+
+`react`, `react-dom` `react-moralis` should be installed automatically ([package.json](./package.json)).
+
+`Tailwind CSS`
+
+### Adapt Alert Conditons 🛠
+
+Cloud function `run` on `watchEthAddress` adds `address` to your list of addresses to track transactions on.
+
+```javascript
+//
+// sync all txs in realtime to WatchedEthAddress class
+Moralis.Cloud.run("watchEthAddress", {
+  address,
+  …
+});
+```
+
+Function `afterSave` on `EthTransactions` then is where you create conditons against those transactions to intiate alerts.
+
+```javascript
+ Moralis.Cloud.afterSave("EthTransactions", async function (request) {
+    …
+ }
+```
+
+### Todos ✅
+
+-   [ ] Dispatch alerts via Telegram/Twitter/Email
+-   [ ] Threshold conditions against tx e.g. only txs > $1,000,000.
+-   [ ] Enable cross-chain compatibility.
+-   [ ] Much more TBA.

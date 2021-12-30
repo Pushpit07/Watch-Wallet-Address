@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <a href="https://immunebytes.com/" target="_blank" rel="noopener noreferrer">
-                ©2021 Immunebytes™. All Rights Reserved.
+                ©2021 ImmuneBytes™. All Rights Reserved.
             </a>
         </footer>
     );

@@ -2,9 +2,15 @@ import { useMoralis } from "react-moralis";
 import Link from "next/link";
 import ErrorBox from "./ErrorBox";
 
-const Navbar = () => {
-    const { authenticate, isAuthenticated, authError, logout, user } = useMoralis();
+const Navbar = ({ setShowLoginModal }) => {
+    const { isAuthenticated, authError, logout, user } = useMoralis();
     // if (user) console.log(user.attributes.username);
+    // useEffect(() => {
+    //     if (!isWeb3Enabled && isAuthenticated) {
+    //         enableWeb3({ provider: "walletconnect", chainId: 56 });
+    //         console.log("web3 activated");
+    //     }
+    // }, [isWeb3Enabled, isAuthenticated, enableWeb3]);
 
     return (
         <nav className="bg-white border-gray-200 px-2 sm:px-4 py-3 dark:bg-gray-800">
@@ -28,9 +34,9 @@ const Navbar = () => {
                         <button
                             type="button"
                             className="px-5 py-2 rounded-xl text-sm font-medium text-white bg-primary-100 hover:bg-primary-300 active:bg-grey-900 focus:outline-none border-4 border-white transition-all"
-                            onClick={() => authenticate()}
+                            onClick={() => setShowLoginModal(true)}
                         >
-                            Authenticate via Metamask
+                            Authenticate
                         </button>
                     )}
                 </div>
@@ -65,14 +71,6 @@ const Navbar = () => {
                                 href="#"
                                 className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:text-primary-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                             >
-                                About
-                            </Link>
-                        </li>
-                        <li className="hover:text-primary-200">
-                            <Link
-                                href="#"
-                                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:text-primary-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                            >
                                 Services
                             </Link>
                         </li>
@@ -90,6 +88,14 @@ const Navbar = () => {
                                 className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:text-primary-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                             >
                                 Profile
+                            </Link>
+                        </li>
+                        <li className="hover:text-primary-200">
+                            <Link
+                                href="/whale-watcher"
+                                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:text-primary-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                            >
+                                Whale Watcher
                             </Link>
                         </li>
                     </ul>
