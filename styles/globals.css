@@ -6,8 +6,7 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     max-width: 1500px;
     margin: auto;
 }
@@ -41,4 +40,10 @@ tr th:nth-child(n + 5) {
 tr td:nth-child(1),
 tr th:nth-child(1) {
     border-radius: 0.625rem 0 0 0.625rem;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: #fa6e48;
+    border-color: #fa6e48;
 }
