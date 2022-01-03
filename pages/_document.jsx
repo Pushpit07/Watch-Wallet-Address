@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
 
 export default class CustomDocument extends Document {
     render() {
@@ -14,7 +13,6 @@ export default class CustomDocument extends Document {
                 <body>
                     <Main />
                     <NextScript />
-                    <Script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></Script>
                 </body>
             </Html>
         );

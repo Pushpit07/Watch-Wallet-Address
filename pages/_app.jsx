@@ -14,6 +14,7 @@ export default function App({ Component, pageProps }) {
     return (
         <>
             <Script src="https://kit.fontawesome.com/0366dd7992.js" crossorigin="anonymous"></Script>
+            <Script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></Script>
             <MoralisProvider appId={MORALIS_APP_ID} serverUrl={MORALIS_SERVER_URL}>
                 <Layout>
                     <Component {...pageProps} account={account} setAccount={setAccount} />
