@@ -6,7 +6,8 @@ import Layout from "../pageComponents/Layout/Layout";
 
 export default function App({ Component, pageProps }) {
     // const [account, setAccount] = useState("0x48b7cedf1d50ce6595a027c9234d5e5bef54e09c");
-    const [account, setAccount] = useState("0x54e006260e0ba68178c4280bff08e9ec3e81f5a7");
+    const [account, setAccount] = useState("0x159507b2b3829791fAB794581D2aC074F3596013");
+
     const MORALIS_APP_ID = process.env.NEXT_PUBLIC_MORALIS_APP_ID;
     const MORALIS_SERVER_URL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 

@@ -32,9 +32,41 @@ i {
     border-radius: 20px;
 }
 
-tr td:nth-child(n + 5),
-tr th:nth-child(n + 5) {
+tr td:nth-child(n + 6),
+tr th:nth-child(n + 6) {
     border-radius: 0 0.625rem 0.625rem 0;
+}
+
+.token-balances td:nth-child(n + 4),
+.token-balances th:nth-child(n + 4) {
+    border-radius: 0 0.625rem 0.625rem 0;
+}
+
+.erc721-txns td:nth-child(n + 6),
+.erc721-txns th:nth-child(n + 6) {
+    border-radius: 0 !important;
+}
+.erc721-txns td:nth-child(n + 7),
+.erc721-txns th:nth-child(n + 7) {
+    border-radius: 0 0.625rem 0.625rem 0 !important;
+}
+
+.erc1155-txns td:nth-child(n + 6),
+.erc1155-txns th:nth-child(n + 6) {
+    border-radius: 0 !important;
+}
+.erc1155-txns td:nth-child(n + 8),
+.erc1155-txns th:nth-child(n + 8) {
+    border-radius: 0 0.625rem 0.625rem 0 !important;
+}
+
+.nft-balances td:nth-child(n + 6),
+.nft-balances th:nth-child(n + 6) {
+    border-radius: 0 !important;
+}
+.nft-balances td:nth-child(n + 7),
+.nft-balances th:nth-child(n + 7) {
+    border-radius: 0 0.625rem 0.625rem 0 !important;
 }
 
 tr td:nth-child(1),
